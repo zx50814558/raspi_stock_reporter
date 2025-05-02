@@ -1,0 +1,2 @@
+add_executable(raspi_stock_reporter_app raspi_stock_reporter_app.cpp)
+target_link_libraries(raspi_stock_reporter_app PRIVATE raspi_stock_reporter)

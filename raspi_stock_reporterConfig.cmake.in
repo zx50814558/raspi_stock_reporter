@@ -1,0 +1,15 @@
+get_filename_component(
+  RASPI_STOCK_REPORTER_CMAKE_DIR
+  ${CMAKE_CURRENT_LIST_FILE}
+  PATH
+)
+set(CMAKE_MODULE_PATH ${RASPI_STOCK_REPORTER_CMAKE_DIR} ${CMAKE_MODULE_PATH})
+
+include(CMakeFindDependencyMacro)
+if(@LIBCURL_FOUND@)
+find_dependency(libcurl)
+endif()
+
+if(NOT TARGET raspi_stock_reporter::raspi_stock_reporter)
+  include("${RASPI_STOCK_REPORTER_CMAKE_DIR}/raspi_stock_reporterTargets.cmake")
+endif()
